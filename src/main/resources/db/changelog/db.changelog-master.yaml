@@ -8,13 +8,13 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: uuid
+                  type: BINARY(16)
                   constraints:
                     primaryKey: true
                     nullable: false
               - column:
                   name: balance
-                  type: decimal(19,2)
+                  type: DECIMAL(19,2)
                   constraints:
                     nullable: false
 
@@ -23,27 +23,27 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: uuid
+                  type: BINARY(16)
                   constraints:
                     primaryKey: true
                     nullable: false
               - column:
                   name: wallet_id
-                  type: uuid
+                  type: BINARY(16)
                   constraints:
                     nullable: false
               - column:
                   name: operation_type
-                  type: varchar(10)
+                  type: VARCHAR(10)
                   constraints:
                     nullable: false
               - column:
                   name: amount
-                  type: decimal(19,2)
+                  type: DECIMAL(19,2)
                   constraints:
                     nullable: false
               - column:
                   name: created_at
-                  type: timestamp
+                  type: TIMESTAMP
                   constraints:
                     nullable: false
