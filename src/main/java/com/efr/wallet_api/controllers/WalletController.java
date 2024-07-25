@@ -42,7 +42,6 @@ public class WalletController {
         } catch (WalletNotFoundException exception){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("wallet not found");
         } catch (Exception exception){
-            System.out.println(exception.fillInStackTrace());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error");
         }
     }
