@@ -3,10 +3,14 @@ package com.efr.wallet_api.dto;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
+@Getter
+@Setter
 public class WalletTransactionDTORequest {
 
     @NotNull
@@ -19,8 +23,4 @@ public class WalletTransactionDTORequest {
     @Positive
     @DecimalMin("0.01")
     private BigDecimal amount;
-}
-
-enum OperationType{
-    DEPOSIT, WITHDRAW
 }
