@@ -34,7 +34,7 @@ public class WalletService {
 
     @Transactional
     public void transaction(WalletTransactionDTORequest request) throws WalletNotFoundException, InsufficientFundsException {
-        Wallet wallet = walletRepository.findById(request.getValletId()).orElseThrow(WalletNotFoundException::new);
+        Wallet wallet = walletRepository.findById(request.getWalletId()).orElseThrow(WalletNotFoundException::new);
 
         BigDecimal newBalance;
         if (request.getOperationType() == OperationType.DEPOSIT) {

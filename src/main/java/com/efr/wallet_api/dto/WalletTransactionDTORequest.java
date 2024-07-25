@@ -14,7 +14,7 @@ import java.util.UUID;
 public class WalletTransactionDTORequest {
 
     @NotNull
-    private UUID valletId;
+    private UUID walletId;
 
     @NotNull
     private OperationType operationType;

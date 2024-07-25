@@ -45,13 +45,13 @@ class WalletApiApplicationTests {
 	public void testTransaction() throws Exception {
 		UUID walletId = UUID.randomUUID();
 		WalletTransactionDTORequest request = new WalletTransactionDTORequest();
-		request.setValletId(walletId);
+		request.setWalletId(walletId);
 		request.setOperationType(OperationType.DEPOSIT);
 		request.setAmount(BigDecimal.valueOf(1000));
 
 		Mockito.doNothing().when(walletService).transaction(Mockito.any(WalletTransactionDTORequest.class));
 
-		mockMvc.perform(post("/api/v1/wallet")
+		mockMvc.perform(post("/api/v1/wallets")
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(new ObjectMapper().writeValueAsString(request)))
 				.andExpect(status().isOk());

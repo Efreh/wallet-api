@@ -16,13 +16,13 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 @Controller
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/wallets")
 public class WalletController {
 
     @Autowired
     private WalletService walletService;
 
-    @GetMapping("/wallets/{walletId}")
+    @GetMapping("{walletId}")
     public ResponseEntity<?> getBalance(@PathVariable UUID walletId){
         try {
             BigDecimal balance = walletService.getBalance(walletId);
@@ -32,7 +32,7 @@ public class WalletController {
         }
     }
 
-    @PostMapping("/wallet")
+    @PostMapping
     public ResponseEntity<?> transaction(@Valid @RequestBody WalletTransactionDTORequest request){
         try {
             walletService.transaction(request);
@@ -46,7 +46,7 @@ public class WalletController {
         }
     }
 
-    @GetMapping("/wallet")
+    @GetMapping
     public ResponseEntity<?> addRandomWalletAndBalance(){
         try {
             UUID walletId = walletService.newRandomWallet();
