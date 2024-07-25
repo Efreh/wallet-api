@@ -7,6 +7,7 @@ import com.efr.wallet_api.dto.WalletTransactionDTORequest;
 import com.efr.wallet_api.entity.Wallet;
 import com.efr.wallet_api.entity.WalletTransaction;
 import com.efr.wallet_api.exception.InsufficientFundsException;
+import com.efr.wallet_api.exception.WalletIsInDatabaseException;
 import com.efr.wallet_api.exception.WalletNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,7 @@ public class WalletService {
         walletRepository.save(wallet);
 
         WalletTransaction walletTransaction = new WalletTransaction();
-        walletTransaction.setWalletId(UUID.randomUUID());
+        walletTransaction.setId(UUID.randomUUID());
         walletTransaction.setWalletId(wallet.getId());
         walletTransaction.setOperationType(request.getOperationType().name());
         walletTransaction.setAmount(request.getAmount());
@@ -57,13 +58,14 @@ public class WalletService {
         walletTransactionRepository.save(walletTransaction);
     }
 
-    public boolean newRandomWallet() {
+    public UUID newRandomWallet() throws WalletIsInDatabaseException {
         Wallet wallet = new Wallet();
         wallet.setId(UUID.randomUUID());
-        if (walletRepository.findById(wallet.getId()).isEmpty()) {
+            if (walletRepository.findById(wallet.getId()).isPresent()){
+                throw new WalletIsInDatabaseException();
+            }
             wallet.setBalance(BigDecimal.valueOf(new Random().nextDouble() * 100000));
             walletRepository.save(wallet);
-            return true;
-        } else return false;
+            return wallet.getId();
     }
 }
