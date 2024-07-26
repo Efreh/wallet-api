@@ -22,7 +22,7 @@ public class WalletController {
     @Autowired
     private WalletService walletService;
 
-    @GetMapping("{walletId}")
+    @GetMapping("/{walletId}")
     public ResponseEntity<?> getBalance(@PathVariable UUID walletId){
         try {
             BigDecimal balance = walletService.getBalance(walletId);

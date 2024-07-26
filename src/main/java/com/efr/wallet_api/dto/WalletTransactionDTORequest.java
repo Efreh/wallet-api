@@ -1,5 +1,6 @@
 package com.efr.wallet_api.dto;
 
+import com.efr.wallet_api.service.OperationType;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;

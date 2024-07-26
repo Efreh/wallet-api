@@ -1,12 +1,12 @@
 D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\controllers\WalletController.java
 D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\dao\WalletRepository.java
 D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\dao\WalletTransactionRepository.java
-D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\dto\OperationType.java
 D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\dto\WalletTransactionDTORequest.java
 D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\entity\Wallet.java
 D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\entity\WalletTransaction.java
 D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\exception\InsufficientFundsException.java
 D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\exception\WalletIsInDatabaseException.java
 D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\exception\WalletNotFoundException.java
+D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\service\OperationType.java
 D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\service\WalletService.java
 D:\Development\Java project\wallet-api\src\main\java\com\efr\wallet_api\WalletApiApplication.java

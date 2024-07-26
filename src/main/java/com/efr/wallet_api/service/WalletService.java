@@ -2,7 +2,6 @@ package com.efr.wallet_api.service;
 
 import com.efr.wallet_api.dao.WalletRepository;
 import com.efr.wallet_api.dao.WalletTransactionRepository;
-import com.efr.wallet_api.dto.OperationType;
 import com.efr.wallet_api.dto.WalletTransactionDTORequest;
 import com.efr.wallet_api.entity.Wallet;
 import com.efr.wallet_api.entity.WalletTransaction;

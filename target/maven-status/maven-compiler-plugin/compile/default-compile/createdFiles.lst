@@ -1,8 +1,8 @@
 com\efr\wallet_api\controllers\WalletController.class
 com\efr\wallet_api\service\WalletService.class
 com\efr\wallet_api\WalletApiApplication.class
+com\efr\wallet_api\service\OperationType.class
 com\efr\wallet_api\entity\Wallet.class
-com\efr\wallet_api\dto\OperationType.class
 com\efr\wallet_api\exception\WalletNotFoundException.class
 com\efr\wallet_api\exception\WalletIsInDatabaseException.class
 com\efr\wallet_api\dao\WalletTransactionRepository.class

@@ -1,6 +1,6 @@
 package com.efr.wallet_api;
 
-import com.efr.wallet_api.dto.OperationType;
+import com.efr.wallet_api.service.OperationType;
 import com.efr.wallet_api.dto.WalletTransactionDTORequest;
 import com.efr.wallet_api.service.WalletService;
 import com.fasterxml.jackson.databind.ObjectMapper;
